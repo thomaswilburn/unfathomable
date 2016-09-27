@@ -1,0 +1,46 @@
+<!doctype html>
+<html ng-app="story-app">
+  <head>
+    <meta charset="utf-8">
+    <title>Story page</title>
+    <style>
+[ng-cloak] { display: none; }
+    </style>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body ng-controller="story-controller" ng-cloak>
+
+    <scene location="airlock">
+      <h1>Airlock</h1>
+
+      <p>
+        It smells like the ocean, the reek of brine and the chill of the deeps lingering even though the drain cycle has long completed. <trigger event="examine-suit">Your diving suit</trigger> is hung in one of the open equipment lockers nearby.
+
+        <trigger ng-if="currentScene.unlocked" event="north">The inner airlock door is unlocked.</trigger>
+
+        <span ng-if="!currentScene.unlocked">A light on the inner airlock door blinks red.</span>
+
+        <trigger event="void">Jump into the void.</trigger>
+
+      <div ng-if="currentScene.backpack">
+        The backpack contains:
+        <ul>
+          <li ng-if="currentScene.backpack.deck">
+            A <trigger event="take-deck">Yamaha cyberdeck</trigger> - an old model, but durable, and that counts for a lot down here.
+          </li>
+          <li ng-if="!currentScene.backpack.deck">
+            Nothing
+          </li>
+        </ul>
+      </div>
+    </scene>
+
+    <scene location="whitebox">
+      You are floating in an empty void, undefined by the storyteller.
+    </scene>
+
+
+
+    <script src="./ui.js"></script>
+  </body>
+</html>
