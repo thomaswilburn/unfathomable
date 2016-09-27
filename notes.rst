@@ -1,4 +1,4 @@
-Unnamed adventure
+Unfathomable
 =================
 
 * Uses multiple windows for different gameplay chunks
@@ -34,8 +34,16 @@ World object::
       currentScene: [Reference to active story scene]
     }
 
-Concepts
-========
+Concept
+--------
 
 You're a troubleshooter on an underwater research station. The station was abandoned in the late 1990's, but if you can get it up and running, you can bring your family in to stay there safely. Restarting the station means debugging faulty machinery, draining water and unlocking living quarters, and avoiding whatever's been haunting its hallways since the original shutdown.
 
+Puzzles
+--------
+
+* Use the deck to interface with various networks around the ship, start and stop systems
+* Draining water from one room fills another?
+* Reconnect power using some sort of wiring puzzle (Talos-like)
+* Control a drone in a little voxel FPS
+* Establish communication with a remote system
