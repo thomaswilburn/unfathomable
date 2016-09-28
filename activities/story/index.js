@@ -14,7 +14,7 @@ var Story = function(world) {
     resizable: false
   });
   storyWindow.toggleDevTools();
-  storyWindow.loadURL(`file://${__dirname}/index.html`);
+  storyWindow.loadURL(`file://${__dirname}/story.html`);
   storyWindow.once("ready-to-show", () => storyWindow.show());
 
   //currently world updates are only routinely sent to the story window
