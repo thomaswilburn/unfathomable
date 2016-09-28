@@ -21,15 +21,9 @@ controller.$inject = ["$scope"]
 
 app.controller("story-controller", controller);
 
+// may add functionality later
 app.directive("scene", () => ({
-  restrict: "E",
-  transclude: true,
-  scope: { location: "@" },
-  template: `
-<div ng-if="$parent.currentScene.id == location">
-  <ng-transclude></ng-transclude>
-</div>
-  `
+  restrict: "E"
 }));
 
 app.directive("trigger", () => ({

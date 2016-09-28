@@ -12,13 +12,13 @@
 
     <main class="scene-container">
 
-      <scene location="airlock">
+      <scene ng-if="currentScene.id == 'airlock'" location="airlock" ng-init="here = currentScene">
         <h1>Airlock</h1>
 
         <p>
           It smells like the ocean, the reek of brine and the chill of the deeps lingering even though the drain cycle has long completed. <trigger event="examine-suit">Your diving suit</trigger> is hung in one of the open equipment lockers nearby.
 
-        <p ng-switch="currentScene.doorStatus">
+        <p ng-switch="here.doorStatus">
           <trigger ng-switch-when="unlocked" event="north">The inner airlock door is unlocked.</trigger>
 
           <span ng-switch-when="locked">A light on the inner airlock door blinks red.</span>
@@ -39,7 +39,7 @@
         </div>
       </scene>
 
-      <scene location="whitebox">
+      <scene ng-if="currentScene.id == 'whitebox'">
         You are floating in an empty void, undefined by the storyteller.
       </scene>
 
