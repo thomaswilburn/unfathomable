@@ -35,6 +35,9 @@ app.directive("scene", () => ({
 app.directive("trigger", () => ({
   restrict: "E",
   link: function(scope, element, attrs) {
-    element.on("click", () => node.send("story-trigger", attrs.event));
+    element.on("click", () => {
+      node.send("story-trigger", attrs.event);
+      element.addClass("triggered");
+    });
   }
 }));

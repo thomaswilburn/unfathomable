@@ -6,7 +6,7 @@ var app = electron.app;
 var scene = {
   id: "airlock",
   backpack: false,
-  unlocked: false,
+  doorStatus: "locked",
   ports: {
     "airlock.inner": {
       connect: (deck) => deck.write("AIRLOCK DOOR OS V2.1r2016"),
@@ -17,7 +17,7 @@ var scene = {
             return deck.disconnect();
 
           case "unlock":
-            scene.unlocked = true;
+            scene.doorStatus = "unlocked";
             deck.write("Manual unlock procedure -- success");
             break;
 
